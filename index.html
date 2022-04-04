@@ -17,12 +17,12 @@
         <div class="background p-3">
             <div class="container mainContainer">
                 <div class="row firstRow">
-                    <div class="col-4">
+                    <div class="col-4 border-end">
                         <!-- ROW UTENTE -->
                         <div class="bg-light p-2 d-flex justify-content-between align-items-center">
                             <div>
                                 <img class="rounded-circle avatar me-2" src="./asset/img/avatar_io.jpg" alt="">
-                                <span>Sofia</span>
+                                <span class="fw-bolder">Sofia</span>
                             </div>
                             <div>
                                 <i class="fa-solid fa-circle-notch greyText"></i>
@@ -41,7 +41,7 @@
                             </div>
                         </div>
                         <!-- SEARCH -->
-                        <div class="p-1">
+                        <div class="p-1 bg-light">
                             <div class="input-group d-flex align-items-center">
                                 <span class="mx-2 pe-1"><i class="fa-solid fa-magnifying-glass greyText"></i></span>
                                 <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-describedby="basic-addon1">
@@ -49,30 +49,69 @@
                         </div>
                         <!-- LISTA DI CHAT -->
                         <div>
-                            <ul>
-                                <li class="my-1 d-flex" v-for="user in contacts">
+                            <ul class="listContacts">
+                                <li class="py-2 d-flex border-bottom ps-3" v-for="user in contacts">
                                     <div> 
                                         <!-- <img src="./asset/img/avatar_1.jpg" alt=""> -->
                                         <img class="avatar rounded-circle" :src="'./asset/img/avatar' + user.avatar + '.jpg'" alt="">
                                         <!-- :src="'/path/to/images/' + fileName" -->
                                     </div>
-                                    <div class="ms-3">
+                                    <div class="ms-3 d-flex justify-content-between w-100">
                                         <div>
-                                            {{user.name}}
+                                            <div>
+                                                {{user.name}}
+                                            </div>
+                                            <div class="greyText">
+                                                ultimo messaggio inviato
+                                            </div>
                                         </div>
                                         <div class="greyText">
-                                            ultimo messaggio inviato
+                                            12.00
                                         </div>
                                     </div>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-8">
-
+                    <div class=" col-8 d-flex flex-column justify-content-between">
+                        <!-- Profilo chat aperta -->
+                        <div class="bg-light p-2 d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center">
+                                <img class="rounded-circle avatar me-2" src="./asset/img/avatar_1.jpg" alt="">
+                                <div>
+                                    <span class="fw-bolder">Michele</span>
+                                    <div class="text-secondary">
+                                        ultimo accesso oggi
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-magnifying-glass greyText"></i>
+                                <i class="fa-solid fa-link greyText mx-3"></i>
+                                <i class="fa-solid fa-ellipsis-vertical greyText"></i>
+                            </div>
+                        </div>
+                        <!-- CHAT -->
+                        <div class="chatBg h-100 p-5">
+                            <ul class="chatMessages d-flex flex-column">
+                                <li class="sent align-self-end py-1 px-3">
+                                    aaa
+                                </li>
+                                <li class="py-1 px-3 received bg-light align-self-start">
+                                    aaasdasdads
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- MANDA MESSAGGIO -->
+                        <div class="p-1 bg-light">
+                            <div class="input-group d-flex align-items-center">
+                                <span class="mx-2 pe-1"><i class="fs-3 p-2 fa-regular fa-face-smile"></i></span>
+                                <input type="text" class="form-control" placeholder="Scrivi un messaggio" aria-describedby="basic-addon1">
+                                <i class="mx-2 fs-4 p-2 fa-solid fa-microphone"></i>
+                                
+                            </div>
+                        </div>                    
                     </div>
-                    
-                </div>
             </div>
         </div>
     </div>

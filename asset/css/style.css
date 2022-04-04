@@ -25,9 +25,26 @@
 .bgLightBlue{
     background-color: #99DAFD;
 }
-.col-4{
+.col-4,
+.col-8{
     padding: 0 !important;
 }
-ul{
+.chatMessages,
+.listContacts{
     list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.chatBg{
+    background-image: url('./../img/mine.jpg');
+}
+.sent{
+    background-color: #D8F8BF;
+    border-radius: 10px;
+}
+.received{
+    border-radius: 10px;
+}
+.col-8{
+    min-height: 100% !important;
 }
