@@ -1,0 +1,12 @@
+.background{
+    height: 100vh;
+    background-image:
+    linear-gradient(to bottom,
+    #359589 0px,
+    #359589 15vh,
+    #dddbd1 15vh,
+    #d2dbdc 100%);
+}
+.mainContainer{
+    background-color: white;
+}
