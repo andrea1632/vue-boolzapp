@@ -10,3 +10,24 @@
 .mainContainer{
     background-color: white;
 }
+.firstRow{
+    height: 100%;
+}
+.avatar{
+    height: 70px;
+}
+.greyText{
+    color: #B0B1B3;
+}
+.lightBlueText{
+    color: #99DAFD;
+}
+.bgLightBlue{
+    background-color: #99DAFD;
+}
+.col-4{
+    padding: 0 !important;
+}
+ul{
+    list-style: none;
+}
