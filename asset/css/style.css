@@ -34,6 +34,7 @@
     list-style: none;
     margin: 0;
     padding: 0;
+    cursor: pointer;
 }
 .chatBg{
     background-image: url('./../img/mine.jpg');

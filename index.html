@@ -42,15 +42,15 @@
                         </div>
                         <!-- SEARCH -->
                         <div class="p-1 bg-light">
-                            <div class="input-group d-flex align-items-center">
+                            <div class="input-group d-flex align-items-center p-1">
                                 <span class="mx-2 pe-1"><i class="fa-solid fa-magnifying-glass greyText fs-4"></i></span>
-                                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-describedby="basic-addon1">
+                                <input v-model="searchInput" type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-describedby="basic-addon1">
                               </div>
                         </div>
                         <!-- LISTA DI CHAT -->
                         <div>
                             <ul class="listContacts">
-                                <li @click="changeClickedIndex(index)" class="py-2 d-flex border-bottom px-3" v-for="(user, index) in contacts">
+                                <li @click="changeClickedIndex(index)" class="py-2 d-flex border-bottom px-3" v-for="(user, index) in searchConctact">
                                     <div> 
                                         <!-- <img src="./asset/img/avatar_1.jpg" alt=""> -->
                                         <img class="avatar rounded-circle" :src="'./asset/img/avatar' + user.avatar + '.jpg'" alt="">

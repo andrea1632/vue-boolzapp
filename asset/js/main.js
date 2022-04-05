@@ -4,6 +4,7 @@ var app = new Vue (
         data:{
             thisActiveIndex : 0,
             newMessage: '',
+            searchInput: '',
             contacts: [ //array di utenti
                 {
                     name: 'Michele',
@@ -191,6 +192,15 @@ var app = new Vue (
                             }
                         )
                     }, 3000
+                )
+            },
+        },
+        //provo a farlo in computed, oppure cerco un modo diverso dal filter()
+        computed: {
+            searchConctact : function(){
+                return this.contacts.filter(elm => {
+                    return elm.name.toLowerCase().includes(this.searchInput.toLowerCase())                
+                }
                 )
             },
         },
