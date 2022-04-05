@@ -95,15 +95,16 @@
                         <div class="chatBg h-100 p-5">
                             <ul class="chatMessages d-flex flex-column">
                                 <li
+                                @click="changeActiveMessage(index)"
                                 id="message" 
                                 class="py-2 pb-3 pe-5 ps-2 mb-2 displayChat" 
                                 v-for="(elm, index) in contacts[thisActiveIndex].messages"
                                 :class="(elm.status == 'sent') ? 'align-self-end sent' : 'align-self-start received'"
                                 >
                                 {{elm.message}}
-                                <i @click="showOnClick = 'true'" class="fa-solid fa-angle-down downArrow"></i>
+                                <i class="fa-solid fa-angle-down downArrow"></i>
                                 <!-- DROPDOWN MENU -->
-                                <div v-if="showOnClick == 'true'" class="drop_down">
+                                <div class="drop_down" v-if="index == activeMessage">
                                     <div>Message info</div>
                                     <div>Delete message</div>
                                 </div>

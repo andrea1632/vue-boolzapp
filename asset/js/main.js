@@ -3,6 +3,7 @@ var app = new Vue (
         el: '#root',
         data:{
             thisActiveIndex : 0,
+            activeMessage : null,
             newMessage: '',
             searchInput: '',
             showOnClick: 'false',
@@ -174,6 +175,10 @@ var app = new Vue (
             changeClickedIndex : function(index){
                 this.thisActiveIndex = index;
                 console.log(`index è : ${this.thisActiveIndex}`)
+            },
+            changeActiveMessage : function(i){
+                this.activeMessage = i
+                console.log(this.activeMessage)
             },
             sendMessage : function(index){
                 this.contacts[index].messages.push({
