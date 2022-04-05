@@ -95,11 +95,14 @@
                         <div class="chatBg h-100 p-5">
                             <ul class="chatMessages d-flex flex-column">
                                 <li 
-                                class="py-1 px-3 mb-2" 
+                                class="py-2 pb-3 pe-5 ps-2 mb-2 displayChat" 
                                 v-for="(elm, index) in contacts[thisActiveIndex].messages"
                                 :class="(elm.status == 'sent') ? 'align-self-end sent' : 'align-self-start received'"
                                 >
                                 {{elm.message}}
+                                <span class="date">
+                                    {{ elm.date }}
+                                </span>
                                 </li>
                                 <!-- <li class="py-1 px-3 received bg-light align-self-start">
                                     aaasdasdads
@@ -123,7 +126,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <!-- days.js -->
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
-    
+
     <script src="./asset/js/main.js"></script>
 </body>
 </html>

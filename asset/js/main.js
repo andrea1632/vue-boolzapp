@@ -175,7 +175,7 @@ var app = new Vue (
             },
             sendMessage : function(index){
                 this.contacts[index].messages.push({
-                    date: '05/04',
+                    date: dayjs().format('DD/MM/YY HH.MM'),
                     message: this.newMessage,
                     status: 'sent',                    
                 }),
@@ -185,14 +185,13 @@ var app = new Vue (
                     () =>{
                         this.contacts[index].messages.push(
                             {
-                                date: 05/04,
+                                date: dayjs().format('DD/MM/YY HH.MM'),
                                 message: 'ok',
                                 status: 'received'
                             }
                         )
                     }, 3000
                 )
-
             },
         },
     }
