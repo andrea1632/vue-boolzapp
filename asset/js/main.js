@@ -173,6 +173,15 @@ var app = new Vue (
                 this.thisActiveIndex = index;
                 console.log(`index è : ${this.thisActiveIndex}`)
             },
+            sendMessage : function(index){
+                this.contacts[index].messages.push({
+                    date: '05/04',
+                    message: this.newMessage,
+                    status: 'sent',                    
+                }),
+                console.log(this.newMessage)
+                this.newMessage = ''
+            },
         },
     }
 )
