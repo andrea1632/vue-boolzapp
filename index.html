@@ -50,7 +50,7 @@
                         <!-- LISTA DI CHAT -->
                         <div>
                             <ul class="listContacts">
-                                <li @click="changeClickedIndex(index)" class="py-2 d-flex border-bottom px-3" v-for="(user, index) in searchConctact">
+                                <li @click="changeClickedIndex(index)" class="py-2 d-flex border-bottom px-3 conctactNames" v-for="(user, index) in searchConctact">
                                     <div> 
                                         <!-- <img src="./asset/img/avatar_1.jpg" alt=""> -->
                                         <img class="avatar rounded-circle" :src="'./asset/img/avatar' + user.avatar + '.jpg'" alt="">
@@ -94,19 +94,23 @@
                         <!-- CHAT -->
                         <div class="chatBg h-100 p-5">
                             <ul class="chatMessages d-flex flex-column">
-                                <li 
+                                <li
+                                id="message" 
                                 class="py-2 pb-3 pe-5 ps-2 mb-2 displayChat" 
                                 v-for="(elm, index) in contacts[thisActiveIndex].messages"
                                 :class="(elm.status == 'sent') ? 'align-self-end sent' : 'align-self-start received'"
                                 >
                                 {{elm.message}}
+                                <i @click="showOnClick = 'true'" class="fa-solid fa-angle-down downArrow"></i>
+                                <!-- DROPDOWN MENU -->
+                                <div v-if="showOnClick == 'true'" class="drop_down">
+                                    <div>Message info</div>
+                                    <div>Delete message</div>
+                                </div>
                                 <span class="date">
                                     {{ elm.date }}
                                 </span>
                                 </li>
-                                <!-- <li class="py-1 px-3 received bg-light align-self-start">
-                                    aaasdasdads
-                                </li> -->
                             </ul>
                         </div>
                         <!-- MANDA MESSAGGIO -->

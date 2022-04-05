@@ -5,6 +5,7 @@ var app = new Vue (
             thisActiveIndex : 0,
             newMessage: '',
             searchInput: '',
+            showOnClick: 'false',
             contacts: [ //array di utenti
                 {
                     name: 'Michele',
@@ -191,7 +192,7 @@ var app = new Vue (
                                 status: 'received'
                             }
                         )
-                    }, 3000
+                    }, 1000
                 )
             },
         },
