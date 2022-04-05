@@ -2,6 +2,8 @@ var app = new Vue (
     {
         el: '#root',
         data:{
+            thisActiveIndex : 0,
+            newMessage: '',
             contacts: [ //array di utenti
                 {
                     name: 'Michele',
@@ -164,10 +166,13 @@ var app = new Vue (
                         }
                     ],
                 }
-            ] //fine array di utenti
+            ], //fine array di utenti
         },
         methods: {
-
+            changeClickedIndex : function(index){
+                this.thisActiveIndex = index;
+                console.log(`index è : ${this.thisActiveIndex}`)
+            },
         },
     }
 )

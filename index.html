@@ -25,15 +25,15 @@
                                 <span class="fw-bolder">Sofia</span>
                             </div>
                             <div>
-                                <i class="fa-solid fa-circle-notch greyText"></i>
-                                <i class="fa-solid fa-message greyText mx-2"></i>
-                                <i class="fa-solid fa-ellipsis-vertical greyText"></i>
+                                <i class="fa-solid fa-circle-notch greyText fs-4"></i>
+                                <i class="fa-solid fa-message greyText mx-2 fs-4"></i>
+                                <i class="fa-solid fa-ellipsis-vertical greyText fs-4"></i>
                             </div>
                         </div>
                                 <!-- NOTIFICHE -->
                         <div class="ps-2 bgLightBlue d-flex align-items-center p-1">
                             <div class="me-2 bg-white rounded-circle p-2">
-                                <i class="fa-solid fa-bell-slash lightBlueText"></i>
+                                <i class="fa-solid fa-bell-slash lightBlueText fs-4"></i>
                             </div>
                             <div>
                                 <div>Ricevi notifiche di nuovi messaggi</div>
@@ -43,14 +43,14 @@
                         <!-- SEARCH -->
                         <div class="p-1 bg-light">
                             <div class="input-group d-flex align-items-center">
-                                <span class="mx-2 pe-1"><i class="fa-solid fa-magnifying-glass greyText"></i></span>
+                                <span class="mx-2 pe-1"><i class="fa-solid fa-magnifying-glass greyText fs-4"></i></span>
                                 <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-describedby="basic-addon1">
                               </div>
                         </div>
                         <!-- LISTA DI CHAT -->
                         <div>
                             <ul class="listContacts">
-                                <li class="py-2 d-flex border-bottom ps-3" v-for="user in contacts">
+                                <li @click="changeClickedIndex(index)" class="py-2 d-flex border-bottom px-3" v-for="(user, index) in contacts">
                                     <div> 
                                         <!-- <img src="./asset/img/avatar_1.jpg" alt=""> -->
                                         <img class="avatar rounded-circle" :src="'./asset/img/avatar' + user.avatar + '.jpg'" alt="">
@@ -77,41 +77,46 @@
                         <!-- Profilo chat aperta -->
                         <div class="bg-light p-2 d-flex justify-content-between align-items-center">
                             <div class="d-flex align-items-center">
-                                <img class="rounded-circle avatar me-2" src="./asset/img/avatar_1.jpg" alt="">
+                                <img class="rounded-circle avatar me-2" :src="`./asset/img/avatar${contacts[thisActiveIndex].avatar}.jpg`" alt="">
                                 <div>
-                                    <span class="fw-bolder">Michele</span>
+                                    <span class="fw-bolder">{{ contacts[thisActiveIndex].name }}</span>
                                     <div class="text-secondary">
                                         ultimo accesso oggi
                                     </div>
                                 </div>
                             </div>
                             <div>
-                                <i class="fa-solid fa-magnifying-glass greyText"></i>
-                                <i class="fa-solid fa-link greyText mx-3"></i>
-                                <i class="fa-solid fa-ellipsis-vertical greyText"></i>
+                                <i class="fa-solid fa-magnifying-glass greyText fs-4"></i>
+                                <i class="fa-solid fa-link greyText mx-3 fs-4"></i>
+                                <i class="fa-solid fa-ellipsis-vertical greyText fs-4"></i>
                             </div>
                         </div>
                         <!-- CHAT -->
                         <div class="chatBg h-100 p-5">
                             <ul class="chatMessages d-flex flex-column">
-                                <li class="sent align-self-end py-1 px-3">
-                                    aaa
+                                <li 
+                                class="py-1 px-3 mb-2" 
+                                v-for="(elm, index) in contacts[thisActiveIndex].messages"
+                                :class="(elm.status == 'sent') ? 'align-self-end sent' : 'align-self-start received'"
+                                >
+                                {{elm.message}}
                                 </li>
-                                <li class="py-1 px-3 received bg-light align-self-start">
+                                <!-- <li class="py-1 px-3 received bg-light align-self-start">
                                     aaasdasdads
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
                         <!-- MANDA MESSAGGIO -->
                         <div class="p-1 bg-light">
                             <div class="input-group d-flex align-items-center">
                                 <span class="mx-2 pe-1"><i class="fs-3 p-2 fa-regular fa-face-smile"></i></span>
-                                <input type="text" class="form-control" placeholder="Scrivi un messaggio" aria-describedby="basic-addon1">
+                                <input v-model="newMessage" type="text" class="form-control" placeholder="Scrivi un messaggio" aria-describedby="basic-addon1">
                                 <i class="mx-2 fs-4 p-2 fa-solid fa-microphone"></i>
                                 
                             </div>
                         </div>                    
                     </div>
+                </div>
             </div>
         </div>
     </div>

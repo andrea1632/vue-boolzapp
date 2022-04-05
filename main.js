@@ -159,5 +159,5 @@ contacts: [
                 status: 'received'
             }
         ],
-    }
+    },
 ]
