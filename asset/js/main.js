@@ -181,16 +181,18 @@ var app = new Vue (
                 }),
                 console.log(this.newMessage)
                 this.newMessage = ''
-                this.replyToMessage(index)
-            },
-            replyToMessage : function(index){
-                setTimeout( 
-                    this.contacts[index].messages.push({
-                        date: '05/04',
-                        message: "Forza Napoli",
-                        status: 'received',
-                    })
-                    ,30000)
+                setTimeout(
+                    () =>{
+                        this.contacts[index].messages.push(
+                            {
+                                date: 05/04,
+                                message: 'ok',
+                                status: 'received'
+                            }
+                        )
+                    }, 3000
+                )
+
             },
         },
     }
