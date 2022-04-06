@@ -7,6 +7,8 @@ var app = new Vue (
             newMessage: '',
             searchInput: '',
             showOnClick: 'false',
+            toggle : 'false',
+            show: false,
             contacts: [ //array di utenti
                 {
                     name: 'Michele',
@@ -186,7 +188,6 @@ var app = new Vue (
             },
             changeActiveMessage : function(i){
                 this.activeMessage = i
-                console.log(this.activeMessage)
             },
             sendMessage : function(index){
                 this.contacts[index].messages.push({
@@ -214,6 +215,13 @@ var app = new Vue (
                 this.contacts[this.thisActiveIndex].messages.splice(y, 1)
                 this.activeMessage = null
             },
+            /*toggleDropDown: function(){
+                if(this.toggle != 'true'){
+                    this.toggle = 'false'
+                } else{
+                    this.toggle = 'true'
+                }
+            }*/
         },
         //provo a farlo in computed, oppure cerco un modo diverso dal filter()
         computed: {

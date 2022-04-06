@@ -101,9 +101,9 @@
                                 :class="(elm.status == 'sent') ? 'align-self-end sent' : 'align-self-start received'"
                                 >
                                 {{elm.message}}
-                                <i class="fa-solid fa-angle-down downArrow"></i>
+                                <i @click="show = !show" class="fa-solid fa-angle-down downArrow"></i>
                                 <!-- DROPDOWN MENU -->
-                                <div class="drop_down" v-if="index == activeMessage">
+                                <div class="drop_down" v-if="index == activeMessage" v-show="show">
                                     <div class="dropdownItem p-2 pt-2 text-center">Message info</div>
                                     <div @click="deleteMessage(activeMessage)" class="dropdownItem p-2 pb-2 text-center">Delete message</div>
                                 </div>

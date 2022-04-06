@@ -11,7 +11,7 @@
     background-color: white;
 }
 .firstRow{
-    height: 95vh;
+    min-height: 95vh;
 }
 .avatar{
     height: 70px;
