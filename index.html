@@ -62,7 +62,7 @@
                                                 {{user.name}}
                                             </div>
                                             <div class="greyText">
-                                                ultimo messaggio inviato
+                                                Ultimo Messaggio
                                             </div>
                                         </div>
                                         <div class="greyText">
@@ -105,8 +105,8 @@
                                 <i class="fa-solid fa-angle-down downArrow"></i>
                                 <!-- DROPDOWN MENU -->
                                 <div class="drop_down" v-if="index == activeMessage">
-                                    <div>Message info</div>
-                                    <div>Delete message</div>
+                                    <div class="dropdownItem p-2 pt-2 text-center">Message info</div>
+                                    <div @click="deleteMessage(activeMessage)" class="dropdownItem p-2 pb-2 text-center">Delete message</div>
                                 </div>
                                 <span class="date">
                                     {{ elm.date }}

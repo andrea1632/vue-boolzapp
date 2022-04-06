@@ -81,7 +81,10 @@
     background-color: white;
     right: 10px;
     top: 40px;
-    padding: 10px;
     width: 150px;
     z-index: 4;
+}
+.dropdownItem:hover{
+    background-color: #B0B1B3;
+    cursor: pointer;
 }

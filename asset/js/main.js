@@ -200,6 +200,10 @@ var app = new Vue (
                     }, 1000
                 )
             },
+            deleteMessage: function(y){
+                this.contacts[this.thisActiveIndex].messages.splice(y, 1)
+                this.activeMessage = null
+            }
         },
         //provo a farlo in computed, oppure cerco un modo diverso dal filter()
         computed: {
