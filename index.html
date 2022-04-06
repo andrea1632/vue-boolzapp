@@ -62,12 +62,11 @@
                                                 {{user.name}}
                                             </div>
                                             <div class="greyText">
-                                                Ultimo Messaggio
+                                                {{ contacts[index].messages[contacts[index].messages.length - 1].message }}
                                             </div>
                                         </div>
                                         <div class="greyText">
-                                            12.00
-                                        </div>
+                                            {{ contacts[index].messages[contacts[index].messages.length - 1].shortDate }}                                        </div>
                                     </div>
                                 </li>
                             </ul>

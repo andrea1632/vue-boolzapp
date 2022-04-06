@@ -26,7 +26,8 @@ var app = new Vue (
                         {
                             date: '10/01/2020 16:15:22',
                             message: 'Tutto fatto!',
-                            status: 'received'
+                            status: 'received',
+                            shortDate: dayjs().format('DD/MM/YYYY'),
                         }
                     ],
                 },
@@ -48,7 +49,8 @@ var app = new Vue (
                         {
                             date: '20/03/2020 16:35:00',
                             message: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                            status: 'sent'
+                            status: 'sent',
+                            shortDate: dayjs().format('DD/MM/YYYY')
                         }
                     ],
                 },
@@ -70,7 +72,8 @@ var app = new Vue (
                         {
                             date: '28/03/2020 16:15:22',
                             message: 'Ah scusa!',
-                            status: 'received'
+                            status: 'received',
+                            shortDate: dayjs().format('DD/MM/YYYY')
                         }
                     ],
                 },
@@ -87,7 +90,8 @@ var app = new Vue (
                         {
                             date: '10/01/2020 15:50:00',
                             message: 'Si, ma preferirei andare al cinema',
-                            status: 'received'
+                            status: 'received',
+                            shortDate: dayjs().format('DD/MM/YYYY')
                         }
                     ],
                 },
@@ -104,7 +108,8 @@ var app = new Vue (
                         {
                             date: '10/01/2020 15:50:00',
                             message: 'Va bene, stasera la sento',
-                            status: 'received'
+                            status: 'received',
+                            shortDate: dayjs().format('DD/MM/YYYY')
                         }
                     ],
                 },
@@ -126,7 +131,8 @@ var app = new Vue (
                         {
                             date: '10/01/2020 15:51:00',
                             message: 'Nessuna nuova, buona nuova',
-                            status: 'sent'
+                            status: 'sent',
+                            shortDate: dayjs().format('DD/MM/YYYY')
                         }
                     ],
                 },
@@ -143,7 +149,8 @@ var app = new Vue (
                         {
                             date: '10/01/2020 15:50:00',
                             message: 'Grazie per avermelo ricordato, le scrivo subito!',
-                            status: 'received'
+                            status: 'received',
+                            shortDate: dayjs().format('DD/MM/YYYY')
                         }
                     ],
                 },
@@ -160,12 +167,13 @@ var app = new Vue (
                         {
                             date: '10/01/2020 15:50:00',
                             message: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
-                            status: 'sent'
+                            status: 'sent',
                         },
                         {
                             date: '10/01/2020 15:51:00',
                             message: 'OK!!',
-                            status: 'received'
+                            status: 'received',
+                            shortDate: dayjs().format('DD/MM/YYYY')
                         }
                     ],
                 }
@@ -184,7 +192,8 @@ var app = new Vue (
                 this.contacts[index].messages.push({
                     date: dayjs().format('DD/MM/YY HH.MM'),
                     message: this.newMessage,
-                    status: 'sent',                    
+                    status: 'sent',
+                    shortDate: dayjs().format('DD/MM/YYYY')                    
                 }),
                 console.log(this.newMessage)
                 this.newMessage = ''
@@ -194,7 +203,8 @@ var app = new Vue (
                             {
                                 date: dayjs().format('DD/MM/YY HH.MM'),
                                 message: 'ok',
-                                status: 'received'
+                                status: 'received',
+                                shortDate: dayjs().format('DD/MM/YYYY')
                             }
                         )
                     }, 1000
@@ -203,7 +213,7 @@ var app = new Vue (
             deleteMessage: function(y){
                 this.contacts[this.thisActiveIndex].messages.splice(y, 1)
                 this.activeMessage = null
-            }
+            },
         },
         //provo a farlo in computed, oppure cerco un modo diverso dal filter()
         computed: {
